@@ -1,0 +1,398 @@
+/* Frames */
+/* ========================================================== */
+:root{
+    --main-color: #ff5a2f;
+    --favorite-color: #ff5a2f;
+    --sale-color: rgba(255, 216, 58, 0.95);
+
+    --header-height: 120px;
+    --navbar-height: 38px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+
+    --box-shadow:  0 1px 3px rgba(204, 204, 204, 0.6);
+
+    --bg-hover: rgba(0, 0, 0, 0.04);
+}
+
+*{
+    box-sizing: inherit;    
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "tw cen mt", sans-serif;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* Reponsive */
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+
+/* Ví dụ */
+.grid__column-2_12 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-10_12 {
+    width: 83.3333%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.grid__column-2_10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+/* ----------------------------------- */
+
+/* Margin */
+.ml-4{
+    margin-left: 4px;
+}
+
+.ml-8{
+    margin-left: 8px;
+}
+
+.ml-12{
+    margin-left: 12px;
+}
+
+.ml-16{
+    margin-left: 16px;
+}
+
+.mr-4{
+    margin-right: 4px;
+}
+
+.mr-8{
+    margin-right: 8px;
+}
+
+.mr-12{
+    margin-right: 12px;
+}
+
+.mr-16{
+    margin-right: 16px;
+}
+
+.mt-4{
+    margin-top: 4px;
+}
+
+.mt-8{
+    margin-top: 8px;
+}
+
+.mt-12{
+    margin-top: 12px;
+}
+
+.mt-16{
+    margin-top: 16px;
+}
+
+.mb-4{
+    margin-bottom: 4px;
+}
+
+.mb-8{
+    margin-bottom: 8px;
+}
+
+.mb-12{
+    margin-bottom: 12px;
+}
+
+.mb-16{
+    margin-bottom: 16px;
+}
+
+/* ========================================================== */
+
+/* Padding */
+.pl-4{
+    padding-left: 4px;
+}
+
+.pl-8{
+    padding-left: 8px;
+}
+
+.pl-12{
+    padding-left: 12px;
+}
+
+.pl-16{
+    padding-left: 16px;
+}
+
+.pr-4{
+    padding-right: 4px;
+}
+
+.pr-8{
+    padding-right: 8px;
+}
+
+.pr-12{
+    padding-right: 12px;
+}
+
+.pr-16{
+    padding-right: 16px;
+}
+
+.pt-4{
+    padding-top: 4px;
+}
+
+.pt-8{
+    padding-top: 8px;
+}
+
+.pt-12{
+    padding-top: 12px;
+}
+
+.pt-16{
+    padding-top: 16px;
+}
+
+.pb-4{
+    padding-bottom: 4px;
+}
+
+.pb-8{
+    padding-bottom: 8px;
+}
+
+.pb-12{
+    padding-bottom: 12px;
+}
+
+.pb-16{
+    padding-bottom: 16px;
+}
+
+/* ========================================================== */
+
+/* Font */
+.bold{
+    font-weight: 600 !important;
+}
+
+/* Button */
+/* ========================================================== */
+.btn{
+    min-width: 140px;
+    height: 34px;
+    line-height: 34px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0;
+    outline: none;
+    color: #333;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.btn.btn--nomal:hover{
+    filter: brightness(.92);
+}
+
+.btn.btn--primary{
+    color: #fff;
+    background: var(--main-color);
+}
+
+.btn.btn--disable{
+    cursor: default !important;
+    filter: brightness(1) !important;
+    opacity: .6 !important;
+}
+
+/* Animations */
+/* ========================================================== */
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from{
+        transform: scale(var(--grow-from));
+    }
+    to{
+        transform: scale(var(--grow-to));
+    }
+}
+
+/* Modal */
+/* ========================================================== */
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    will-change: opacity;
+    animation: fadeIn linear .1s;
+}
+
+.modal__body{
+    margin: auto;
+    --grow-from: 0.5;
+    --grow-to: 1;
+    position: relative;
+    z-index: 1;
+    animation: growth linear .1s;
+}
+
+/* Selection */
+.select-input{
+    min-width: 200px;
+    height: 34px;
+    padding: 0 16px;
+    border-radius: 2px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+.select-input:hover .select-input__list{
+    display: block;
+}
+
+.select-input__list::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+}
+
+.select-input__list{
+    position: absolute;
+    background: #fff;
+    border: 2px;
+    top: calc(100% - 9px);
+    right: 0;
+    left: 0;
+    border: 2px;
+    padding: 4px 0;
+    box-shadow: var(--box-shadow);
+    animation: fadeIn ease-in .2s;
+    will-change: opacity;
+    display: none;
+    cursor: default;
+    z-index: 1;
+}
+
+.select-input__link{
+    padding: 12px 16px;
+    display: block;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.select-input__link:hover{
+    color: var(--main-color);
+}
+
+/* Pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination__item{
+    margin: 0 8px;
+}
+
+.pagination__link{
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    font-size: 1.8rem;
+    min-width: 40px;
+    height: 30px;
+}
+
+.pagination--active .pagination__link{
+    background: var(--main-color);
+    color: #fff;
+}
+
+.pagination--active .pagination__link:hover{
+    opacity: .8;
+}
+
+/* -------------------------------- */
+
+/* Hide & Show */
+/* ============================= */
